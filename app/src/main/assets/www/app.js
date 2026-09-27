@@ -12,7 +12,7 @@ function speedMultiplier(t){let now=Date.now(),start=t.startedAt||t.createdAt||n
 function reworkMultiplier(t){return (t.reworkCount||0)===0?1.2:(t.reworkCount||0)===1?1:.8}
 function taskXP(t){let start=t.startedAt||t.createdAt||Date.now(),spent=(Date.now()-start)/60000;if(spent<2)return 1;let subs=(t.subtasks||[]).filter(s=>s.done).length;return Math.max(1,Math.round(baseXP(t)*speedMultiplier(t)*reworkMultiplier(t)+subs*2))}
 function addEvent(t,type,text){t.events=t.events||[];t.events.unshift({at:Date.now(),type,text})}
-function reward(t,before=achievementState()){let gain=taskXP(t),xp+=gain;t.xpAwarded=gain;t.completedAt=Date.now();addEvent(t,'xp','Получено '+gain+' XP');if(t.big3)recordStreak();spawnRepeat(t);save();showXP(gain);setTimeout(()=>checkAchievementUnlocks(before),850)}
+function reward(t,before=achievementState()){let gain=taskXP(t);xp+=gain;t.xpAwarded=gain;t.completedAt=Date.now();addEvent(t,'xp','Получено '+gain+' XP');if(t.big3)recordStreak();spawnRepeat(t);save();showXP(gain);setTimeout(()=>checkAchievementUnlocks(before),850)}
 function unreward(t){xp=Math.max(0,xp-(t.xpAwarded||taskXP(t)));delete t.xpAwarded;delete t.completedAt}
 function quickDone(id){let t=tasks.find(x=>x.id===id);if(!t)return;let before=achievementState(),was=t.status==='done';t.status=was?'not_started':'done';addEvent(t,'status',was?'Возвращено в «Не начато»':'Завершено');if(was)unreward(t);else reward(t,before);save();render()}
 function openAdd(){taskSheet.classList.add('show');sheetBackdrop.classList.add('show');dueDate.value=localDate(new Date());setTimeout(()=>title.focus(),300)}
