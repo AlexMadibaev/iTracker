@@ -62,4 +62,4 @@ function nextRepeatDate(t){if(!t.dueDate||!t.repeat||t.repeat==='none')return nu
 function spawnRepeat(t){let nd=nextRepeatDate(t);if(!nd)return;let exists=tasks.some(x=>x.repeatParent===t.id&&x.dueDate===nd);if(exists)return;tasks.push({...t,id:Date.now()+Math.floor(Math.random()*1000),status:'not_started',dueDate:nd,createdAt:Date.now(),startedAt:null,completedAt:null,xpAwarded:null,events:[{at:Date.now(),type:'repeat',text:'Создано по повторению'}],subtasks:(t.subtasks||[]).map(s=>({...s,done:false})),repeatParent:t.id})}
 
 function finishLaunch(){let s=document.getElementById('launchSplash');if(s)s.classList.add('hide')}
-window.addEventListener('load',()=>setTimeout(finishLaunch,1150));setTimeout(finishLaunch,2200);
+setTimeout(finishLaunch,900);
