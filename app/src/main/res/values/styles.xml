@@ -1,1 +1,7 @@
-<resources><style name="Theme.iTracker" parent="android:style/Theme.Material.NoActionBar"><item name="android:fontFamily">sans</item><item name="android:colorAccent">#F7B744</item><item name="android:navigationBarColor">#050505</item><item name="android:statusBarColor">#050505</item><item name="android:windowLightStatusBar">false</item></style></resources>
+<resources>
+<style name="Theme.iTracker" parent="android:style/Theme.Material.NoActionBar">
+<item name="android:fontFamily">sans</item><item name="android:colorAccent">#F7B744</item>
+<item name="android:windowBackground">#050505</item><item name="android:windowDisablePreview">true</item>
+<item name="android:navigationBarColor">#050505</item><item name="android:statusBarColor">#050505</item>
+<item name="android:windowLightStatusBar">false</item><item name="android:windowLightNavigationBar">false</item>
+</style></resources>
