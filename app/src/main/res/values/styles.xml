@@ -1,7 +1,11 @@
 <resources>
 <style name="Theme.iTracker" parent="android:style/Theme.Material.NoActionBar">
 <item name="android:fontFamily">sans</item><item name="android:colorAccent">#F7B744</item>
-<item name="android:windowBackground">#050505</item><item name="android:windowDisablePreview">true</item>
+<item name="android:windowBackground">#050505</item>
 <item name="android:navigationBarColor">#050505</item><item name="android:statusBarColor">#050505</item>
 <item name="android:windowLightStatusBar">false</item><item name="android:windowLightNavigationBar">false</item>
+<item name="android:windowSplashScreenBackground">#050505</item>
+<item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_blank</item>
+<item name="android:windowSplashScreenIconBackgroundColor">#050505</item>
+<item name="android:windowSplashScreenAnimationDuration">0</item>
 </style></resources>
