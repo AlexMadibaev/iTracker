@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.*;
 import android.provider.Settings;
+import android.view.Window;
 import android.webkit.*;
 import androidx.core.app.NotificationCompat;
 import java.text.SimpleDateFormat;
